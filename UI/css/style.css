@@ -1,6 +1,6 @@
 body{
 font-family: sans-serif;
-background-image: url();
+background: url(../pics/report.jpg);
 
 }
 
@@ -32,10 +32,11 @@ background-image: url();
     margin: 0;
     float: left;
     margin: 0 0 25px 0;
+    color: #154168;
 }
 
 .register input {
-    border: 1px solid #652b27;
+    border: 1px solid #113b61;
     padding: 15px;
     margin: 0 0 25px 0;
     font-size: 13.33333px;
@@ -46,7 +47,7 @@ background-image: url();
 
 .register button {
     text-transform: uppercase;
-    background: #652b27;
+    background: #113b61;
     padding: 15px 0;
     font-size: 17px;
     display: inline-block;
