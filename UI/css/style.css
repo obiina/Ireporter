@@ -25,7 +25,7 @@ background: url(../pics/report.jpg);
     padding: 50px;
     
 }
-.register p {
+#text{
     text-transform: uppercase;
     font-weight: 600;
     font-size: 30px;
@@ -43,7 +43,13 @@ background: url(../pics/report.jpg);
     width: 92%;
     border-radius: 2px;
 }
-
+#signUp{
+    text-decoration: none !important;
+    color: white;
+}
+p#signIn {
+    margin-top: 40px;
+}
 
 .register button {
     text-transform: uppercase;
@@ -61,3 +67,18 @@ background: url(../pics/report.jpg);
     border-radius: 2px;
 }
 
+@media only screen and (max-width: 1000px){
+.register {
+    width: 77%;
+    padding: 20px;
+    position: relative;
+    margin: -48px 0 0 0;
+    max-width: 500px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.42);
+}
+
+.shadow_div {
+    height: 770px;
+}
+
+}
