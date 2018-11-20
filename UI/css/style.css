@@ -138,8 +138,40 @@ nav a {
     background: #191919;
 }
 
+.singleInterventions {
+    border: #113b61 0.5px solid;
+    width: 500px;
+    min-height: 500px;    
+    margin: 0 auto;
+    display: inline-table;
+    margin: 85px 40px 20px;
+    cursor: default;
+    transition: 0.3s;
+}
 
+#img_fit{
+    width: 500px;
+}
+.interventionDetails {
+    font-family: sans-serif;
+    margin-bottom: 17px;
+    border-bottom: #113b61 1px solid;
+    margin: 20px;
+}
 
+.interventionBody {
+    margin: 20px;
+    font-family: sans-serif;
+}
+p#heading {
+    margin-top: 80px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 32px;
+    margin-bottom: -43px;
+    margin-left: -63px;
+    color: #113b61;
+}
 @media only screen and (max-width: 1130px){
 nav a {
     display: none;
