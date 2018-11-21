@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
     <title>Profile</title>
+    <script src="js/jquery.min.js"></script>
 </head>
 <body>
         <nav class="dark-nav">
@@ -28,8 +29,211 @@
                 <a class="sideLink" href="redFlag.html">Create Red Flag</a>
                 <a class="sideLink" href="intervention.html">Create Intervention</a>
                 <a class="sideLink" href="profile.html">Profile</a>        
-                <a class="sideLink" href="admin.html">Sign as Admin</a>        
-                
+                <a class="sideLink" href="admin.html">Sign as Admin</a>                        
             </div>
+
+
+
+            <div class="left_side">
+                    <img src="pics/profiler.png" alt="" class="logo">
+                    <p class="report">Username</p>                        
+                        <a class="item active orders">All Records</a>
+                        <a class="item investigation">Under Investigation</a>
+                        <a class="item rejected">Rejected</a>                        
+                    </div>
+
+                    
+    <div class="interventions">
+            <p id="heading">ALL INTERVENTIONS/RED-FLAGS</p>
+         <div class="singleInterventions">
+             <div class="img">
+                 <img src="pics/testing.jpg" id="img_fit" alt="" srcset="">
+             </div>
+             <div class="interventionDetails">
+                 <p>This is title of the intervention</p>
+     
+                 <p>Date: 12/2/13</p>
+                 <p>Location: SomeWhere</p>
+     
+             </div>
+             <div class="interventionBody">
+                 <p>
+                     This is the body
+                 </p>
+                 <p id="left"><a href="#">delete</a></p>
+             </div>
+     </div>
+     <div class="singleInterventions">
+             <div class="img">
+                 <img src="pics/tested.jpg" id="img_fit" alt="" srcset="">
+             </div>
+             <div class="interventionDetails">
+                 <p>This is title of the intervention</p>
+     
+                 <p>Date: 12/2/13</p>
+                 <p>Location: SomeWhere</p>
+     
+             </div>
+             <div class="interventionBody">
+                 <p>
+                     This is the body
+                 </p>
+                 <p id="left"><a href="#">delete</a></p>
+     
+             </div>
+     
+             
+     
+         </div>
+     
+         <div class="singleInterventions">
+                 <div class="img">
+                     <img src="pics/tested.jpg" id="img_fit" alt="" srcset="">
+                 </div>
+                 <div class="interventionDetails">
+                     <p>This is title of the intervention</p>
+         
+                     <p>Date: 12/2/13</p>
+                     <p>Location: SomeWhere</p>
+         
+                 </div>
+                 <div class="interventionBody">
+                     <p>
+                         This is the body
+                     </p>
+                     <p id="left"><a href="#">delete</a></p>
+                 </div>
+            </div>
+    </div>
+
+    <div class="under_investigation">
+            <p id="heading">ALL INTERVENTIONS/RED-FLAGS UNDER INVESTIGATION</p>
+         <div class="singleInterventions">
+             <div class="img">
+                 <img src="pics/testing.jpg" id="img_fit" alt="" srcset="">
+             </div>
+             <div class="interventionDetails">
+                 <p>This is title of the intervention</p>
+     
+                 <p>Date: 12/2/13</p>
+                 <p>Location: SomeWhere</p>
+     
+             </div>
+             <div class="interventionBody">
+                 <p>
+                     This is the body
+                 </p>
+                 <p id="left"><a href="#">delete</a></p>
+             </div>
+     </div>
+     <div class="singleInterventions">
+             <div class="img">
+                 <img src="pics/tested.jpg" id="img_fit" alt="" srcset="">
+             </div>
+             <div class="interventionDetails">
+                 <p>This is title of the intervention</p>
+     
+                 <p>Date: 12/2/13</p>
+                 <p>Location: SomeWhere</p>
+     
+             </div>
+             <div class="interventionBody">
+                 <p>
+                     This is the body
+                 </p>
+                 <p id="left"><a href="#">delete</a></p>
+     
+             </div>
+     
+             
+     
+         </div>
+     
+         <div class="singleInterventions">
+                 <div class="img">
+                     <img src="pics/tested.jpg" id="img_fit" alt="" srcset="">
+                 </div>
+                 <div class="interventionDetails">
+                     <p>This is title of the intervention</p>
+         
+                     <p>Date: 12/2/13</p>
+                     <p>Location: SomeWhere</p>
+         
+                 </div>
+                 <div class="interventionBody">
+                     <p>
+                         This is the body
+                     </p>
+                     <p id="left"><a href="#">delete</a></p>
+                 </div>
+            </div>
+        </div>
+
+        <div class="rejected_interventions">
+                <p id="heading">ALL REJECTED INTERVENTIONS/RED-FLAGS</p>
+             <div class="singleInterventions">
+                 <div class="img">
+                     <img src="pics/testing.jpg" id="img_fit" alt="" srcset="">
+                 </div>
+                 <div class="interventionDetails">
+                     <p>This is title of the intervention</p>
+         
+                     <p>Date: 12/2/13</p>
+                     <p>Location: SomeWhere</p>
+         
+                 </div>
+                 <div class="interventionBody">
+                     <p>
+                         This is the body
+                     </p>
+                     <p id="left"><a href="#">delete</a></p>
+                 </div>
+         </div>
+         <div class="singleInterventions">
+                 <div class="img">
+                     <img src="pics/tested.jpg" id="img_fit" alt="" srcset="">
+                 </div>
+                 <div class="interventionDetails">
+                     <p>This is title of the intervention</p>
+         
+                     <p>Date: 12/2/13</p>
+                     <p>Location: SomeWhere</p>
+         
+                 </div>
+                 <div class="interventionBody">
+                     <p>
+                         This is the body
+                     </p>
+                     <p id="left"><a href="#">delete</a></p>
+         
+                 </div>
+         
+                 
+         
+             </div>
+         
+             <div class="singleInterventions">
+                     <div class="img">
+                         <img src="pics/tested.jpg" id="img_fit" alt="" srcset="">
+                     </div>
+                     <div class="interventionDetails">
+                         <p>This is title of the intervention</p>
+             
+                         <p>Date: 12/2/13</p>
+                         <p>Location: SomeWhere</p>
+             
+                     </div>
+                     <div class="interventionBody">
+                         <p>
+                             This is the body
+                         </p>
+                         <p id="left"><a href="#">delete</a></p>
+                     </div>
+                </div>
+            </div>
+
+
+
+<script src="js/profile.js"></script>
 </body>
 </html>

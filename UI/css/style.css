@@ -143,11 +143,11 @@ nav a {
 
 .singleInterventions {
     border: #113b61 0.5px solid;
-    width: 500px;
+    width: 400px;
     min-height: 500px;    
     margin: 0 auto;
     display: inline-table;
-    margin: 85px 83px 20px;
+    margin: 85px -107px 0 281px;
     cursor: default;
     transition: 0.3s;
 }
@@ -182,7 +182,7 @@ nav a {
 }
 
 #img_fit{
-    width: 500px;
+    width: 400px;
 }
 .interventionDetails {
     font-family: sans-serif;
@@ -272,6 +272,57 @@ textarea {
     max-height: 150px;
     min-width: 92%;
     min-height: 50px;
+}
+.item.active {
+    background: rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
+}
+.left_side .item, .item_head {
+    width: calc(100% - 62px);
+    background: transparent;
+    display: inline-block;
+    color: #fff;
+    padding: 15px 15px 15px 50px;
+    cursor: pointer;
+    font-weight: 100;
+    transition: 0.4s;
+}
+#left{
+    float: left;
+}
+
+.rejected_interventions{
+    display: none;
+}
+.under_investigation{
+    display: none;
+}
+
+img.logo {
+    width: 70px;
+    padding: 38px 65px 80px;
+    background: rgba(0, 0, 0, 0.25);
+    margin: 25px 0 14px 0;
+}
+.report {
+    font-family: sans-serif;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 25px;
+    position: absolute;
+    margin: -92px 0 0px 38px;
+}
+
+.left_side {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    font-family: sans-serif;
+    left: 0;
+    top: 0;
+    background:rgb(17, 59, 97);
+    z-index: 1;
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
 }
 
 .register button {
