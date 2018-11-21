@@ -1,0 +1,92 @@
+body{
+font-family: sans-serif;
+background: url(../pics/report.jpg);
+
+}
+
+
+.shadow_div {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    width: inherit;
+    display: inline-block;    
+    position: absolute;
+    left: 33%;
+    top: 10px;
+    
+}
+
+.register {
+    width: 400px;
+    display: inline-block;
+    background: #fff;    
+    margin: 0 0 0 -4px;
+    position: relative;
+    border-radius: 2px;
+    padding: 50px;
+    
+}
+#text{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 0;
+    float: left;
+    margin: 0 0 25px 0;
+    color: #154168;
+}
+
+.register input {
+    border: 1px solid #113b61;
+    padding: 15px;
+    margin: 0 0 25px 0;
+    font-size: 13.33333px;
+    width: 92%;
+    border-radius: 2px;
+}
+#signUp{
+    text-decoration: none !important;
+    color: white;
+}
+
+#signin{
+    text-decoration: none !important;
+    color: white;
+}
+
+p#signIn {
+    margin-top: 40px;
+}
+
+.register button {
+    text-transform: uppercase;
+    background: #113b61;
+    padding: 15px 0;
+    font-size: 17px;
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    font-family: sans-serif;
+    width: 100%;
+    border-radius: 2px;
+}
+
+
+@media only screen and (max-width: 1000px){
+.register {
+    width: 77%;
+    padding: 20px;
+    position: relative;
+    margin: -48px 0 0 0;
+    max-width: 500px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.42);
+}
+
+.shadow_div {
+    left:13%;
+    height: 770px;
+}
+
+}
