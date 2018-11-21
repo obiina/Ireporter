@@ -298,6 +298,10 @@ textarea {
     display: none;
 }
 
+.resolved_interventions{
+    display: none;
+}
+
 img.logo {
     width: 70px;
     padding: 38px 65px 80px;
