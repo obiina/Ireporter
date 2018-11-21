@@ -15,6 +15,7 @@ body{
     top: 0;
     transition: 0.5s;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    z-index: 10;
 }
 .dark-nav .site_title {
     margin-left: 2%;
@@ -133,6 +134,8 @@ nav a {
     text-transform: capitalize;
 }
 
+
+
 .active {
     border-left: 4px solid #113b61;
     background: #191919;
@@ -144,9 +147,38 @@ nav a {
     min-height: 500px;    
     margin: 0 auto;
     display: inline-table;
-    margin: 85px 40px 20px;
+    margin: 85px 83px 20px;
     cursor: default;
     transition: 0.3s;
+}
+.top_container {
+    width: 100%;
+    text-align: center;
+    height: 400px;
+    vertical-align: middle;
+    background: url(../pics/report.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.red{
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 50px;       
+    color:#113b61; 
+}
+
+.container_name {
+    color: #fff;
+    margin-top: 150px;
+    font-family: sans-serif;
+    font-size: 240%;
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 #img_fit{
@@ -168,9 +200,112 @@ p#heading {
     text-align: center;
     font-family: sans-serif;
     font-size: 32px;
-    margin-bottom: -43px;
-    margin-left: -63px;
+    margin-bottom: -43px;    
     color: #113b61;
+}
+.shadow_div {
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    width: inherit;
+    display: inline-block;    
+    position: absolute;
+    left: 33%;
+    top: 10px;
+    
+}
+
+.register {
+    width: 800px;
+    background: #fff;
+    margin: auto;
+    border-radius: 2px;
+    padding: 50px;
+}
+#text{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 30px;
+    margin: 0;
+    float: left;
+    margin: 0 0 25px 0;
+    color: #154168;
+}
+
+.register input {
+    border: 1px solid #113b61;
+    padding: 15px;
+    margin: 0 0 25px 0;
+    font-size: 13.33333px;
+    width: 92%;
+    border-radius: 2px;
+}
+
+.register select {
+    border: 1px solid #113b61;
+    padding: 15px;
+    margin: 0 0 25px 0;
+    font-size: 13.33333px;
+    width: 96%;
+    border-radius: 2px;
+}
+#signUp{
+    text-decoration: none !important;
+    color: white;
+}
+
+#signin{
+    text-decoration: none !important;
+    color: white;
+}
+
+p#signIn {
+    margin-top: 40px;
+}
+textarea {
+    border: 1px solid #113b61;
+    padding: 15px;
+    margin: 0 0 25px 0;
+    font-size: 15.33333px;
+    font-family: sans-serif;
+    max-width: 92%;
+    border-radius: 2px;
+    height: 95px;    
+    max-height: 150px;
+    min-width: 92%;
+    min-height: 50px;
+}
+
+.register button {
+    text-transform: uppercase;
+    background: #113b61;
+    padding: 15px 0;
+    font-size: 17px;
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    font-family: sans-serif;
+    width: 96%;
+    border-radius: 2px;
+}
+
+
+@media only screen and (max-width: 1000px){
+.register {
+    width: 77%;
+    padding: 20px;
+    position: relative;
+    margin: 20px 36px 63px;
+    max-width: 500px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.42);
+}
+
+.shadow_div {
+    left:13%;
+    height: 770px;
+}
+
 }
 @media only screen and (max-width: 1130px){
 nav a {
