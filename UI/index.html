@@ -12,13 +12,12 @@
 </head>
 <body>
     <nav class="dark-nav">
-        <a class="site_title" href="index.php">Ireporter</a>    
-        <a href="booking.php">book an event</a>
-        <a href="menu.php">Menu</a>
-        <a href="about.php">about us</a>
-        <a href="gallery.php">gallery</a>
-        <a href="contact.php">contact us</a>
-        <a href="services.php">create red flag</a>
+        <a class="site_title" href="index.html">Ireporter</a>    
+        <a href="admin.html">Sign as Admin</a>
+        <a href="profile.html">Profile</a>
+        <a href="intervention.html">create Intervention</a>
+        <a href="redFlag.html">create red flag</a>
+        
     
         <div class="bars-container" onclick="toggle(this)">
             <div class="bar1"></div>
@@ -28,17 +27,16 @@
     
     </nav>
     <div class="sideBar">
-        <a class="sideLink" href="index.php">Home</a>
-        <a class="sideLink" href="services.php">services</a>
-        <a class="sideLink" href="booking.php">book an event</a>
-        <a class="sideLink" href="menu.php">menu</a>
-        <a class="sideLink" href="about.php">about us</a>
-        <a class="sideLink" href="gallery.php">gallery</a>
-        <a class="sideLink" href="contact.php">contact us</a>
+        <a class="sideLink" href="index.html">Home</a>
+        <a class="sideLink" href="redFlag.html">Create Red Flag</a>
+        <a class="sideLink" href="intervention.html">Create Intervention</a>
+        <a class="sideLink" href="profile.html">Profile</a>        
+        <a class="sideLink" href="admin.html">Sign as Admin</a>        
+        
     </div>
 
     <div class="interventions">
-       <p id="heading">ALL INTERVENTIONS</p>
+       <p id="heading">ALL INTERVENTIONS/RED-FLAGS</p>
     <div class="singleInterventions">
         <div class="img">
             <img src="pics/testing.jpg" id="img_fit" alt="" srcset="">
@@ -75,9 +73,32 @@
 
         </div>
 
+        
 
     </div>
 
+    <div class="singleInterventions">
+            <div class="img">
+                <img src="pics/tested.jpg" id="img_fit" alt="" srcset="">
+            </div>
+            <div class="interventionDetails">
+                <p>This is title of the intervention</p>
+    
+                <p>Date: 12/2/13</p>
+                <p>Location: SomeWhere</p>
+    
+            </div>
+            <div class="interventionBody">
+                <p>
+                    This is the body
+                </p>
+    
+            </div>
+    
+            
+    
+        </div>
+    
 
     <script src="js/ireport.js"></script>
 </body>
