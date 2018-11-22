@@ -60,9 +60,72 @@ nav a {
     display: none;
     transition: 0.3s;
 }
+img#more_img {
+    width: 1138px;
+    margin: 90px 104px;
+    height: 400px;
+}
+
+#change{
+background: #113b61;
+padding: 15px 0;
+font-size: 17px;
+display: inline-block;
+margin: 0;
+cursor: pointer;
+font-weight: 600;
+color: #fff;
+border: none;
+font-family: sans-serif;
+width: 96%;
+border-radius: 2px;
+
+}
+
+#admin_select{
+border: 1px solid #113b61;
+padding: 15px;
+margin: 0 0 25px 0;
+font-size: 13.33333px;
+width: 96%;
+border-radius: 2px;
+}
+p#details {
+    margin: -11px 104px;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: #113b61;
+    margin-bottom: 20px;
+}
+
+#more {
+    margin-top: 80px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 32px;
+    margin-bottom: -43px;
+    color: #113b61;
+}
+
+.report_singleInterventions {
+    border: #113b61 0.5px solid;
+    width: 400px;
+    min-height: 400px;
+    margin: 0 auto;
+    display: inline-table;
+    margin: 85px 2px 0px 33px;
+    cursor: default;
+    transition: 0.3s;
+
+}
+#report_img_fit {
+    width: 400px;
+    height: 250px;
+}
 
 #index_img_fit {
     width: 500px;
+
 }
 .bar1, .bar2, .bar3 {
     width: 100%;
