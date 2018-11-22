@@ -65,6 +65,31 @@ img#more_img {
     margin: 90px 104px;
     height: 400px;
 }
+
+#change{
+background: #113b61;
+padding: 15px 0;
+font-size: 17px;
+display: inline-block;
+margin: 0;
+cursor: pointer;
+font-weight: 600;
+color: #fff;
+border: none;
+font-family: sans-serif;
+width: 96%;
+border-radius: 2px;
+
+}
+
+#admin_select{
+border: 1px solid #113b61;
+padding: 15px;
+margin: 0 0 25px 0;
+font-size: 13.33333px;
+width: 96%;
+border-radius: 2px;
+}
 p#details {
     margin: -11px 104px;
     font-family: sans-serif;
