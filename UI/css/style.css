@@ -61,6 +61,22 @@ nav a {
     transition: 0.3s;
 }
 
+.report_singleInterventions {
+    border: #113b61 0.5px solid;
+    width: 400px;
+    min-height: 400px;
+    margin: 0 auto;
+    display: inline-table;
+    margin: 85px 2px 0px 33px;
+    cursor: default;
+    transition: 0.3s;
+
+}
+#report_img_fit {
+    width: 400px;
+    height: 250px;
+}
+
 #index_img_fit {
     width: 500px;
 }
