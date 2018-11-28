@@ -14,7 +14,7 @@ $(document).ready(() => {
                      <p>Name: ' + user.firstname + ' </p></div>\
                  <div class="interventionBody">\
                      <p>\
-                        '+ user.email + '\
+                       Email: '+ user.email + '\
                      </p>\
                      <p>\
                             <a href="reports.html">View reports</a>\
