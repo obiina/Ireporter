@@ -1,19 +1,17 @@
 $(document).ready(() => {
     $(function(){
         $.ajax({
-            url:'/users',
+            type: 'GET',
+            url: '/v1/users',
             contentType: 'application/json',
             success:function(response) {
-                const details = $('.report_singleInterventions');
-                details.html('');
-
+                const details = $('.interventions');
+                details.html('  <p id="heading">ALL REPORTERS</p>');
                 response.users.forEach(function(user){
                      details.append('\
-                     <div class="img">\
-                     <img src="pics/ronaldo.jpg" id="report_img_fit" alt="" srcset="">\
-                 </div>\
+                     <div class="report_singleInterventions">\
                  <div class="interventionDetails">\
-                     <p>Name: </p>' + user.firstname + '</div>\
+                     <p>Name: ' + user.firstname + ' </p></div>\
                  <div class="interventionBody">\
                      <p>\
                         '+ user.email + '\
@@ -21,11 +19,9 @@ $(document).ready(() => {
                      <p>\
                             <a href="reports.html">View reports</a>\
                         </p>\
-                 </div>\                    
-                     ');   
-                });
-
-                        
+                 </div>\
+                 </div>');   
+                });                        
             }
           });
   })

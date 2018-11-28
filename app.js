@@ -9,7 +9,7 @@ const redFlagsRoutes = require('./api/v1/routes/red-flags');
 app.use(express.static(`${__dirname  }/UI`));
 
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
    res.sendFile(__dirname + '/UI/index.html');
 });
 app.use(bodyParser.urlencoded({ extended: false }));
