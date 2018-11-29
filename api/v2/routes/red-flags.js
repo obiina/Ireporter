@@ -2,23 +2,15 @@ const express = require('express');
 
 const router = express.Router();
 
-
-router.get('/', (req, res, next) => {
-  res.status(200).json({
-    message: 'Getting all red-flags',
-  });
-});
-
-
 const redFlags = [
   {
     id: 1,
-    createdOn: 3 / 25 / 2015,
+    createdOn: '3 / 25 / 2015',
     CreatedBy: 'Micheal',
     type: 'red-flag',
     location: 'Garrison',
     status: 'Under Investigation',
-    Images: 'report.jpg',
+    Images: 'pics/report.jpg',
     Videos: 'dummy.mp4',
     comment: "They're Killing everyone",
 
@@ -26,12 +18,12 @@ const redFlags = [
 
   {
     id: 2,
-    createdOn: 3 / 25 / 2015,
+    createdOn: '3 / 25 / 2015',
     CreatedBy: 'John',
     type: 'red-flag',
     location: 'Garrison',
     status: 'Under Investigation',
-    Images: 'report.jpg',
+    Images: 'pics/report.jpg',
     Videos: 'dummy.mp4',
     comment: "They're Killing everyone",
 
@@ -39,20 +31,32 @@ const redFlags = [
 
   {
     id: 3,
-    createdOn: 3 / 25 / 2015,
-    CreatedBy: 'Prince',
+    createdOn: '3 / 25 / 2015',
+    CreatedBy: 'TheSnitch',
+    type: 'red-flag',
+    location: 'port harcourt',
+    status: 'Under Investigation',
+    Images: 'pics/report.jpg',
+    Videos: 'dummy.mp4',
+    comment: "They're Killing everyone",
+
+  },
+  {
+    id: 4,
+    createdOn: '3/ 25 / 2015',
+    CreatedBy: 'TheSnitch',
     type: 'red-flag',
     location: 'Garrison',
     status: 'Under Investigation',
-    Images: 'report.jpg',
+    Images: 'pics/report.jpg',
     Videos: 'dummy.mp4',
     comment: "They're Killing everyone",
 
   },
 ];
 router.post('/', (req, res, next) => {
-  const incident = {
-    id: req.body.id,
+  const redFlag = {
+    id: redFlags.length + 1,
     createdOn: req.body.createdOn,
     CreatedBy: req.body.CreatedBy,
     type: req.body.type,
@@ -63,29 +67,32 @@ router.post('/', (req, res, next) => {
     comment: req.body.comment,
 
   };
-  
+
+
   res.status(200).json({
     message: 'creating red-flags',
-    incident,
-
-
+    redFlags,
   });
-  redFlags.push(incident);
+  redFlags.push(redFlag);
 });
 
-router.get('/:redFlagId', (req, res, next) => {
-  const id = req.params.redFlagId;
-  if (id === '2') {
-    res.status(200).json({
-      message: 'You are one of the users',
-      id,
-    });
-  } else {
-    res.status(200).json({
-      message: 'you passes an id',
-      id,
-    });
-  }
+router.get('/', (req, res, next) => {
+  res.status(200).json({
+    message: 'Getting all red-flags',
+    redFlags,
+  });
+});
+
+router.get('/user/:CreatedBy', (req, res, next) => {
+  const userReports = redFlags.filter(redFlag => redFlag.CreatedBy === req.params.CreatedBy);
+  res.status(200).json({ userReports });
+});
+
+
+router.get('/report', (req, res, next) => {
+  const Reportsids = redFlags.find(redFlag => redFlag.id === parseInt(req.query.id))
+  console.log(Reportsids);
+  res.status(200).json({ Reportsids });
 });
 
 router.patch('/:redFlagId/comment', (req, res, next) => {

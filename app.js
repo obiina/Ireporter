@@ -14,8 +14,8 @@ app.get('/', (req, res) => {
 });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/v1/users', usersRoutes);
-app.use('/v1/red-flags', redFlagsRoutes);
+app.use('/v2/users', usersRoutes);
+app.use('/v2/red-flags', redFlagsRoutes);
 app.use((req, res, next) => {
   const error = new Error('Not Found');
   error.status = 404;
