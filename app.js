@@ -2,8 +2,8 @@ const express = require('express');
 
 const app = express();
 const bodyParser = require('body-parser');
-const usersRoutes = require('./api/v1/routes/users');
-const redFlagsRoutes = require('./api/v1/routes/red-flags');
+const usersRoutes = require('./api/v2/routes/users');
+const redFlagsRoutes = require('./api/v2/routes/red-flags');
 
 
 app.use(express.static(`${__dirname  }/UI`));

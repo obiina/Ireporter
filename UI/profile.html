@@ -12,9 +12,8 @@
         <nav class="dark-nav">
                 <a class="site_title" href="index.html">Ireporter</a>    
                 <a href="admin_log.html">Sign as Admin</a>
-                <a href="#">Profile</a>
-                <a href="intervention.html">create Intervention</a>
-                <a href="redFlag.html">create red flag</a>
+                <a href="#">Profile</a>                
+                <a href="redFlag.html" id="red">create red flag</a>
                 
             
                 <div class="bars-container" onclick="toggle(this)">
@@ -26,7 +25,7 @@
             </nav>
             <div class="sideBar">
                 <a class="sideLink" href="index.html">Home</a>
-                <a class="sideLink" href="redFlag.html">Create Red Flag</a>
+                <a class="sideLink" id = "red" href="redFlag.html">Create Red Flag</a>
                 <a class="sideLink" href="intervention.html">Create Intervention</a>
                 <a class="sideLink" href="#.html">Profile</a>        
                 <a class="sideLink" href="admin_log.html">Sign as Admin</a>                        
@@ -43,8 +42,10 @@
                         <a class="item resolved">Resolved</a>                        
                     </div>
 
+
                     
     <div class="interventions">
+            <p id = "heading"></p>
             <p id="heading">ALL INTERVENTIONS/RED-FLAGS</p>
          <div class="singleInterventions">
              <div class="img">

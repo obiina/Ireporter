@@ -278,6 +278,14 @@ p#heading {
     margin-bottom: -43px;    
     color: #113b61;
 }
+p.header {
+    margin-top: 80px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 32px;
+    margin-bottom: -43px;    
+    color: #113b61;
+}
 .shadow_div {
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
     width: inherit;

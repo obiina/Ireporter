@@ -77,15 +77,6 @@ res.json({ user })
 });
 
 
-router.post('/signupo', (req, res, next) => {
-  const user = users.find(user => user.username === req.body.username);
-  if (!user) {
-    throw new Error(`Username provided is invalid ${req.body.username}`);
-}
-res.json({ user })
-});
-
-
 router.patch('/:usersId', (req, res, next) => {
   res.status(200).json({
     message: 'updated user!',

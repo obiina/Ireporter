@@ -22,7 +22,7 @@ const redFlags = [
     CreatedBy: 'John',
     type: 'red-flag',
     location: 'Garrison',
-    status: 'Under Investigation',
+    status: 'Rejected',
     Images: 'pics/report.jpg',
     Videos: 'dummy.mp4',
     comment: "They're Killing everyone",
@@ -47,7 +47,7 @@ const redFlags = [
     CreatedBy: 'TheSnitch',
     type: 'red-flag',
     location: 'Garrison',
-    status: 'Under Investigation',
+    status: 'Rejected',
     Images: 'pics/report.jpg',
     Videos: 'dummy.mp4',
     comment: "They're Killing everyone",
@@ -86,6 +86,20 @@ router.get('/', (req, res, next) => {
 router.get('/user/:CreatedBy', (req, res, next) => {
   const userReports = redFlags.filter(redFlag => redFlag.CreatedBy === req.params.CreatedBy);
   res.status(200).json({ userReports });
+});
+
+
+router.get('/report/:user/:status', (req, res, next) => {  
+  const reportsStatus = redFlags.filter(redFlag => redFlag.CreatedBy === req.params.user);
+  if (!reportsStatus) {
+    throw new Error('user not found');
+  }else{
+  const mainStatus = reportsStatus.filter(main  => main.status === req.params.status)
+  console.log(mainStatus);
+  res.status(200).json({ 
+    mainStatus
+    });
+  }
 });
 
 

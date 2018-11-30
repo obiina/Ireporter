@@ -14,10 +14,8 @@
         <nav class="dark-nav">
                 <a class="site_title" href="index.html">Ireporter</a>    
                 <a href="admin_log.html">Sign as Admin</a>
-                <a href="signin.html">Profile</a>
-                <a href="intervention.html">create Intervention</a>
-                <a href="redFlag.html">create red flag</a>
-                
+                <a href="signin.html" id="red">Profile</a>                
+                <a href="redFlag.html">create red flag</a>                     
             
                 <div class="bars-container" onclick="toggle(this)">
                     <div class="bar1"></div>
@@ -28,9 +26,8 @@
             </nav>
             <div class="sideBar">
                 <a class="sideLink" href="index.html">Home</a>
-                <a class="sideLink" href="redFlag.html">Create Red Flag</a>
-                <a class="sideLink" href="intervention.html">Create Intervention</a>
-                <a class="sideLink" href="signin.html">Profile</a>        
+                <a class="sideLink" href="redFlag.html">Create Red Flag</a>                
+                <a class="sideLink" href="profile.html">Profile</a>        
                 <a class="sideLink" href="admin_log.html">Sign as Admin</a>        
                 
             </div>
@@ -42,21 +39,21 @@
 
      <div class="redFlagForm">
          <h1 class="red">Add Red New Flag</h1>
-         <form class="register">                    
-             <select name="" id="">
-                    <option value="Robbery">Robbery</option>
-                    <option value="Rape">Rape</option>
-                    <option value="Murder">Murder</option>                    
-             </select>                          
-                <textarea name="" id="" placeholder="Description"></textarea>
-                <input type="text" name="" id="" placeholder="location">
-                <input type="file">
-                <input type="file">                
+         <form class="register">                                    
+             <select name="" id="category">
+                <option value="Red Flag">Red Flag</option>
+                <option value="Intervention">Intervention</option>                
+         </select>                          
+                <textarea name="" id="comment" placeholder="Description"></textarea>
+                <input type="text" name="" id="location" placeholder="location">
+                <input type="file" id="image">
+                <input type="file" id="video">                
                 <br>
-                <button type="submit"><a href = "profile.html" id="signin">Submit</a></button>
+                <button type="submit" id="signin">Submit</button>
             </form>
         </div>
-    </div>     
+    </div>
+    <script src="js/redFlag.js"></script>     
 <script src="js/ireport.js"></script>
 </body>
 </html>
