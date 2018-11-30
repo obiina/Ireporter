@@ -24,9 +24,9 @@ document.querySelector('#signin').addEventListener('click', (e) =>{
         const CreatedBy = user;        
         const type = document.querySelector('#category').value;
         const location = document.querySelector('#location').value;
-        const status = 'Pending';
-        const image = document.querySelector('#image').src;
-        const video = document.querySelector('#video').src;
+        const status = 'Pending';        
+        const Images = $('#image').files;
+        const Videos = $('#video').files;
         const comment = document.querySelector('#comment').value;          
 
 
@@ -36,7 +36,7 @@ document.querySelector('#signin').addEventListener('click', (e) =>{
            'Accept' :'application/json',
           'Content-Type' :'application/json'
             },
-        body: JSON.stringify({createdOn,CreatedBy,type,location,status,image,video,comment})
+        body: JSON.stringify({createdOn,CreatedBy,type,location,status,Images,Videos,comment})
     }).then(json)
     .then(response  =>{
     alert('Incident Recorded Successfully ');

@@ -1,6 +1,17 @@
 const express = require('express');
-
+const multer = require('multer');
 const router = express.Router();
+const storage = multer({
+  dest: 'uploads/',
+  filename: function(req, file, cb){
+    cb(null, file.imageName + '-' +Date.now() + path.extname(file.originalname)); 
+  }
+});
+
+const upload = multer({
+  storage: storage
+}).any('imageName','videoName')
+
 
 const redFlags = [
   {
@@ -9,7 +20,7 @@ const redFlags = [
     CreatedBy: 'Micheal',
     type: 'red-flag',
     location: 'Garrison',
-    status: 'Under Investigation',
+    status: 'Draft',
     Images: 'pics/report.jpg',
     Videos: 'dummy.mp4',
     comment: "They're Killing everyone",
@@ -22,7 +33,7 @@ const redFlags = [
     CreatedBy: 'John',
     type: 'red-flag',
     location: 'Garrison',
-    status: 'Rejected',
+    status: 'Draft',
     Images: 'pics/report.jpg',
     Videos: 'dummy.mp4',
     comment: "They're Killing everyone",
@@ -35,7 +46,7 @@ const redFlags = [
     CreatedBy: 'TheSnitch',
     type: 'red-flag',
     location: 'port harcourt',
-    status: 'Under Investigation',
+    status: 'Draft',
     Images: 'pics/report.jpg',
     Videos: 'dummy.mp4',
     comment: "They're Killing everyone",
@@ -47,14 +58,15 @@ const redFlags = [
     CreatedBy: 'TheSnitch',
     type: 'red-flag',
     location: 'Garrison',
-    status: 'Rejected',
+    status: 'Draft',
     Images: 'pics/report.jpg',
     Videos: 'dummy.mp4',
     comment: "They're Killing everyone",
 
   },
 ];
-router.post('/', (req, res, next) => {
+router.post('/',storage.any(), (req, res, next) => {  
+  console.log(req.files);
   const redFlag = {
     id: redFlags.length + 1,
     createdOn: req.body.createdOn,
@@ -62,10 +74,7 @@ router.post('/', (req, res, next) => {
     type: req.body.type,
     location: req.body.location,
     status: req.body.status,
-    Images: req.body.Images,
-    Videos: req.body.Videos,
     comment: req.body.comment,
-
   };
 
 
@@ -88,7 +97,6 @@ router.get('/user/:CreatedBy', (req, res, next) => {
   res.status(200).json({ userReports });
 });
 
-
 router.get('/report/:user/:status', (req, res, next) => {  
   const reportsStatus = redFlags.filter(redFlag => redFlag.CreatedBy === req.params.user);
   if (!reportsStatus) {
@@ -107,6 +115,33 @@ router.get('/report', (req, res, next) => {
   const Reportsids = redFlags.find(redFlag => redFlag.id === parseInt(req.query.id))
   console.log(Reportsids);
   res.status(200).json({ Reportsids });
+});
+
+
+router.delete('/report/:id', (req, res, next) => {
+ const id = req.params.id;
+ var found = false;
+ redFlags.forEach(function(redFlag, index){
+   if(!found && redFlag.id === parseInt(id)){
+     redFlags.splice(index, 1);
+   }
+ });
+    res.send('Successfully deleted red flag');
+});
+
+
+router.put('/report', (req, res, next) => {
+  const Reportsids = redFlags.filter(redFlag => redFlag.id === parseInt(req.body.id))
+    const status = req.body.status;
+    console.log(Reportsids);
+  if(Reportsids){ 
+    Reportsids.forEach(function(redFlag, index){
+  redFlag.status = status; 
+    })
+ }
+  res.status(200).json({
+    message: 'Updated Successfully'
+  });
 });
 
 router.patch('/:redFlagId/comment', (req, res, next) => {

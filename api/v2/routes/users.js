@@ -11,7 +11,7 @@ const users = [
     phoneNumber: '080288209',
     username: 'TheSnitch',
     registered: '3 / 25 / 2015',
-    isAdmin: 'true',
+    isAdmin: false,
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const users = [
     phoneNumber: '080288209',
     username: 'Thecoolguy',
     registered: '3 / 25 / 2015',
-    isAdmin: 'true',
+    isAdmin: false,
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const users = [
     phoneNumber: '080288209',
     username: 'Thereporter',
     registered: '3 / 25 / 2015',
-    isAdmin: 'true',
+    isAdmin: true,
   },
 ];
 
@@ -75,6 +75,17 @@ router.post('/login', (req, res, next) => {
 }
 res.json({ user })
 });
+
+
+router.post('/admin', (req, res, next) => {  
+  const user = users.filter(user => user.username === req.body.username);
+  const admincheck = user.find(admin => admin.isAdmin === true);
+  if (!admincheck) {
+    throw new Error(`You do not have Admin Access ${req.body.username}`);
+}
+res.json({ admincheck })
+});
+
 
 
 router.patch('/:usersId', (req, res, next) => {

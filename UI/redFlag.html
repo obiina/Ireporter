@@ -39,15 +39,15 @@
 
      <div class="redFlagForm">
          <h1 class="red">Add Red New Flag</h1>
-         <form class="register">                                    
+         <form class="register" enctype="multipart/form-data">                                    
              <select name="" id="category">
                 <option value="Red Flag">Red Flag</option>
                 <option value="Intervention">Intervention</option>                
          </select>                          
                 <textarea name="" id="comment" placeholder="Description"></textarea>
                 <input type="text" name="" id="location" placeholder="location">
-                <input type="file" id="image">
-                <input type="file" id="video">                
+                <input type="file" name = "imageName" id="image">
+                <input type="file" name = "videoName" id="video">                
                 <br>
                 <button type="submit" id="signin">Submit</button>
             </form>

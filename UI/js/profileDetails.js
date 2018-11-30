@@ -33,6 +33,10 @@ $(document).ready(() => {
                  <p>
                      <a href="profilemore.html?id=${userReport.id}">Read more</a>
                  </p>
+                 <p>
+                 <a href="#" id = "delete" value = "${userReport.id}" data-delete = "${userReport.id}" style = "color:red">delete</a>
+                 <a href="Edit.html?id=${userReport.id}" style = "float:right;">edit</a>
+             </p>
                  </div>
      </div>
              `
@@ -42,7 +46,17 @@ $(document).ready(() => {
       });
     });
 
-
+    $('body').on('click', '#delete', function(){
+    const id = $(this).attr('data-delete')
+    $.ajax({
+        type: 'DELETE',
+        url: `/v2/red-flags/${id}`,
+        contentType: 'application/json',
+        success(response) {   
+        alert('Succesfully Deleted Red Flag')
+                }
+        })       
+    })
 
     document.querySelector('.investigation').addEventListener('click',() =>{
         status = 'Under Investigation'        
