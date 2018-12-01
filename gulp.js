@@ -1,3 +1,3 @@
-gulp.task('travis', ['build', 'testServerJS'] function(){
+gulp.task('travis', ['build', 'testServerJS'], function(){
 	process.exit(0);
 });
