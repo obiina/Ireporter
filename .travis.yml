@@ -1,4 +1,7 @@
+v2
 language: node_js
 node_js:
  "stable"
-script: gulp travis
+script: gulp travi
+
+master
