@@ -90,7 +90,7 @@ font-size: 13.33333px;
 width: 96%;
 border-radius: 2px;
 }
-p#details {
+#details {
     margin: -11px 104px;
     font-family: sans-serif;
     font-size: 18px;
@@ -110,13 +110,13 @@ p#details {
 .report_singleInterventions {
     border: #113b61 0.5px solid;
     width: 400px;
-    min-height: 400px;
+    min-height: 157px;
     margin: 0 auto;
     display: inline-table;
     margin: 85px 2px 0px 33px;
     cursor: default;
     transition: 0.3s;
-
+    height: 146px;
 }
 #report_img_fit {
     width: 400px;
@@ -271,6 +271,14 @@ p#details {
     font-family: sans-serif;
 }
 p#heading {
+    margin-top: 80px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 32px;
+    margin-bottom: -43px;    
+    color: #113b61;
+}
+p.header {
     margin-top: 80px;
     text-align: center;
     font-family: sans-serif;
