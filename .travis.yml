@@ -1,1 +1,7 @@
+v2
+language: node_js
+node_js:
+ "stable"
+script: gulp travi
 
+master

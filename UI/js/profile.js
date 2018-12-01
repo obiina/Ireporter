@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
 
 var records,investigation, rejected, resolved;
 
@@ -44,4 +44,4 @@ resolved.click(function(){
     $(".resolved_interventions").fadeIn();
 })
 
-})
+});
