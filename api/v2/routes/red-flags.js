@@ -144,7 +144,7 @@ router.put('/report', (req, res, next) => {
   });
 });
 
-router.patch('/:redFlagId/comment', (req, res, next) => {
+router.patch('/report/:comment', (req, res, next) => {
   res.status(200).json({
     message: 'updated comment!',
     redFlagId: req.params.redFlagId.comment,
@@ -152,7 +152,7 @@ router.patch('/:redFlagId/comment', (req, res, next) => {
   });
 });
 
-router.patch('/:redFlagId/location', (req, res, next) => {
+router.patch('/report/:location', (req, res, next) => {
   res.status(200).json({
     message: 'updated location!',
     redFlagId: req.params.redFlagId.location,
@@ -160,19 +160,7 @@ router.patch('/:redFlagId/location', (req, res, next) => {
   });
 });
 
-router.patch('/:redFlagId', (req, res, next) => {
-  res.status(200).json({
-    message: 'updated user!',
-    redFlagId: req.params.redFlagId,
 
-  });
-});
-router.delete('/:redFlagId/comment', (req, res, next) => {
-  res.status(200).json({
-    message: 'Deleted comment!',
-    redFlagId: req.params.redFlagId.comment,
-  });
-});
 
 router.delete('/:redFlagId', (req, res, next) => {
   res.status(200).json({
