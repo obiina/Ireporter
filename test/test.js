@@ -16,7 +16,7 @@ it(function(done) {
 });
 
 it(function(done) {
-    request('http://localhost:3000/profile' , function(error, response, body) {
+    request('http://localhost:3000/user' , function(error, response, body) {
         expect(response.statusCode).to.equal(200);
         done();
     });
