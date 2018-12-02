@@ -1,5 +1,7 @@
+v2
 language: node_js
 node_js:
+v2
   - "stable"
 cache:
   directories:
@@ -8,3 +10,9 @@ cache:
 after_success:
   - npm run coverageafter_success:
   - npm run coverage
+
+ "stable"
+script: gulp travi
+
+master
+master
