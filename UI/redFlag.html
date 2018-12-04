@@ -15,7 +15,7 @@
                 <a class="site_title" href="index.html">Ireporter</a>    
                 <a href="admin_log.html">Sign as Admin</a>
                 <a href="signin.html" id="red">Profile</a>                
-                <a href="redFlag.html">create red flag</a>                     
+                <a href="redFlag.html">create record</a>                     
             
                 <div class="bars-container" onclick="toggle(this)">
                     <div class="bar1"></div>
@@ -26,7 +26,7 @@
             </nav>
             <div class="sideBar">
                 <a class="sideLink" href="index.html">Home</a>
-                <a class="sideLink" href="redFlag.html">Create Red Flag</a>                
+                <a class="sideLink" href="redFlag.html">Create Record</a>                
                 <a class="sideLink" href="profile.html">Profile</a>        
                 <a class="sideLink" href="admin_log.html">Sign as Admin</a>        
                 
@@ -43,16 +43,19 @@
              <select name="" id="category">
                 <option value="Red Flag">Red Flag</option>
                 <option value="Intervention">Intervention</option>                
-         </select>                          
+         </select>
+                <input type="text" name="title" id="title" placeholder="Title of incident">                          
                 <textarea name="" id="comment" placeholder="Description"></textarea>
-                <input type="text" name="" id="location" placeholder="location">
-                <input type="file" name = "imageName" id="image">
-                <input type="file" name = "videoName" id="video">                
+                <div id="map"></div>                
                 <br>
                 <button type="submit" id="signin">Submit</button>
             </form>
         </div>
     </div>
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXgw6ee9ZEUdR2gpdFyZieAF6K6isYl-I&callback=map">
+    </script>
     <script src="js/redFlag.js"></script>     
 <script src="js/ireport.js"></script>
 </body>

@@ -16,17 +16,29 @@ function json(res){
   if(mm<10) {
       mm = '0'+mm
   } 
-  
+  function map(){
+      var ikeja = {lat: 3.3792, lng: 6.5244}
+      var map = new google.maps.Map(
+        document.getElementById('map'), {
+            zoom: 4,
+             center: ikeja
+            });
+
+        var marker = new google.maps.Marker({
+            position: ikeja,
+             map: map
+            });
+  }
+
   today = mm + '/' + dd + '/' + yyyy;
 document.querySelector('#signin').addEventListener('click', (e) =>{
     e.preventDefault();
-        const createdOn = today;        
+        const createdOn = today;
+        const title = document.querySelector('#title').value;        
         const CreatedBy = user;        
         const type = document.querySelector('#category').value;
         const location = document.querySelector('#location').value;
-        const status = 'Pending';        
-        const Images = $('#image').files;
-        const Videos = $('#video').files;
+        const status = 'Draft';                
         const comment = document.querySelector('#comment').value;          
 
 
@@ -36,11 +48,10 @@ document.querySelector('#signin').addEventListener('click', (e) =>{
            'Accept' :'application/json',
           'Content-Type' :'application/json'
             },
-        body: JSON.stringify({createdOn,CreatedBy,type,location,status,Images,Videos,comment})
+        body: JSON.stringify({createdOn,CreatedBy,type,location,status,comment,title})
     }).then(json)
     .then(response  =>{
     alert('Incident Recorded Successfully ');
     window.location.replace(`/profile.html?user=${CreatedBy}`);
     })
 })
- 
