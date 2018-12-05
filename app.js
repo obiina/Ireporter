@@ -6,11 +6,11 @@ const usersRoutes = require('./api/v2/routes/users');
 const redFlagsRoutes = require('./api/v2/routes/red-flags');
 
 
-app.use(express.static(`${__dirname  }/UI`));
+app.use(express.static(`${__dirname }/UI`));
 
 
 app.get('/', (req, res) => {
-   res.sendFile(__dirname + '/UI/index.html');
+  res.sendFile(`${__dirname  }/UI/index.html`);
 });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -30,5 +30,4 @@ app.use((error, req, res, next) => {
     },
   });
 });
-
 module.exports = app;
