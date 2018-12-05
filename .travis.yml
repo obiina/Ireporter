@@ -1,7 +1,7 @@
-v2
+master
 language: node_js
 node_js:
-v2
+master
   - "stable"
 cache:
   directories:
@@ -14,5 +14,3 @@ after_success:
  "stable"
 script: gulp travi
 
-master
-master
