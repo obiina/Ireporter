@@ -1,74 +1,71 @@
 const express = require('express');
 const multer = require('multer');
 const router = express.Router();
-const storage = multer({
-  dest: 'uploads/',
-  filename: function(req, file, cb){
-    cb(null, file.imageName + '-' +Date.now() + path.extname(file.originalname)); 
-  }
-});
+// const storage = multer({
+//   dest: 'uploads/',
+//   filename: function(req, file, cb){
+//     cb(null, file.imageName + '-' +Date.now() + path.extname(file.originalname)); 
+//   }
+// });
 
-const upload = multer({
-  storage: storage
-}).any('imageName','videoName')
+// const upload = multer({
+//   storage: storage
+// }).any('imageName','videoName')
 
 
 const redFlags = [
   {
     id: 1,
     createdOn: '3 / 25 / 2015',
+    title:'Stop stealing our money',
     CreatedBy: 'Micheal',
     type: 'red-flag',
     location: 'Garrison',
-    status: 'Draft',
-    Images: 'pics/report.jpg',
-    Videos: 'dummy.mp4',
-    comment: "They're Killing everyone",
+    status: 'Draft',    
+    comment: "Today we found out that a young boy although was known for always stealing meat, unfortunately he was caught by his dad and the guy no wan hear na so ehhn panel bit ehhn pikin based on one or two",
 
   },
 
   {
     id: 2,
     createdOn: '3 / 25 / 2015',
+    title:'Young boy buthchered by rival cult',
     CreatedBy: 'John',
     type: 'red-flag',
     location: 'Garrison',
-    status: 'Draft',
-    Images: 'pics/report.jpg',
-    Videos: 'dummy.mp4',
-    comment: "They're Killing everyone",
+    status: 'Draft',    
+    comment: "Today we found out that a young boy although was known for always stealing meat, unfortunately he was caught by his dad and the guy no wan hear na so ehhn panel bit ehhn pikin based on one or two",
 
   },
 
   {
     id: 3,
     createdOn: '3 / 25 / 2015',
+    title:'Fix our roads please',
     CreatedBy: 'TheSnitch',
     type: 'red-flag',
     location: 'port harcourt',
-    status: 'Draft',
-    Images: 'pics/report.jpg',
-    Videos: 'dummy.mp4',
-    comment: "They're Killing everyone",
+    status: 'Under Investigation',    
+    comment: "Today we found out that a young boy although was known for always stealing meat, unfortunately he was caught by his dad and the guy no wan hear na so ehhn panel bit ehhn pikin based on one or two",
 
   },
   {
     id: 4,
     createdOn: '3/ 25 / 2015',
+    title:'Young boy killed by his father for stealing meat',
     CreatedBy: 'TheSnitch',
     type: 'red-flag',
     location: 'Garrison',
-    status: 'Draft',
-    Images: 'pics/report.jpg',
-    Videos: 'dummy.mp4',
-    comment: "They're Killing everyone",
+    status: 'Draft',    
+    comment: "Today we found out that a young boy although was known for always stealing meat, unfortunately he was caught by his dad and the guy no wan hear na so ehhn panel bit ehhn pikin based on one or two",
 
   },
 ];
-router.post('/',storage.any(), (req, res, next) => {  
+router.post('/', (req, res, next) => {  
   console.log(req.files);
   const redFlag = {
     id: redFlags.length + 1,
+    title:req.body.title,
     createdOn: req.body.createdOn,
     CreatedBy: req.body.CreatedBy,
     type: req.body.type,
@@ -118,15 +115,21 @@ router.get('/report', (req, res, next) => {
 });
 
 
-router.delete('/report/:id', (req, res, next) => {
- const id = req.params.id;
+router.delete('/report', (req, res, next) => {
+ const id = req.query.id;
  var found = false;
+
  redFlags.forEach(function(redFlag, index){
    if(!found && redFlag.id === parseInt(id)){
-     redFlags.splice(index, 1);
+     const spliced = redFlags.splice(redFlag, id);     
+     res.status(200).json({
+       message : 'Successfully deleted red flag',     
+      });
    }
+   
+   
  });
-    res.send('Successfully deleted red flag');
+    
 });
 
 
@@ -157,15 +160,6 @@ router.patch('/report/:location', (req, res, next) => {
     message: 'updated location!',
     redFlagId: req.params.redFlagId.location,
 
-  });
-});
-
-
-
-router.delete('/:redFlagId', (req, res, next) => {
-  res.status(200).json({
-    message: 'Deleted redFlag!',
-    redFlagId: req.params.redFlagId,
   });
 });
 

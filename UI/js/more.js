@@ -14,22 +14,18 @@ $(document).ready(() => {
         info.html('');
 
         const renderReports = ({
-          Images, createdOn, CreatedBy, type, location, status, comment}) => 
+          Images,title, createdOn, CreatedBy, type, location, status, comment}) => 
         `<div class="more_info">
         <p id="more">              
         </p>
-        <img src="${Images}" id="more_img" alt="" srcset="">
-        <p id="details">
-        <video width="800" controls>
-        <source src="mov_bbb.mp4" type="video/mp4">          
-        </video>
+        <p id="details">       
         <div id = "details">
-        <p>Created On: ${createdOn}</p>
-        <p>Written By: ${CreatedBy}</p>
+        <p id = "title_more">${title}</p>
+        <p>Created On: ${createdOn}</p>        
         <p>Type: ${type}</p>
         <p>location: ${location}</p>
         <p>status: ${status}</p>
-        <p>Comment:<br><br> ${comment}</p>
+        <p>${comment}</p>
           </div>
           </div>          
             `;

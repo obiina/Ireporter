@@ -11,6 +11,7 @@ const users = [
     phoneNumber: '080288209',
     username: 'TheSnitch',
     registered: '3 / 25 / 2015',
+    password:'admin',
     isAdmin: false,
   },
   {
@@ -22,6 +23,7 @@ const users = [
     phoneNumber: '080288209',
     username: 'Thecoolguy',
     registered: '3 / 25 / 2015',
+    password:'password',
     isAdmin: false,
   },
   {
@@ -32,6 +34,7 @@ const users = [
     email: 'Obinna932@gmail.com',
     phoneNumber: '080288209',
     username: 'Thereporter',
+    password:'password',
     registered: '3 / 25 / 2015',
     isAdmin: true,
   },
@@ -47,6 +50,7 @@ router.post('/', (req, res, next) => {
     phoneNumber: req.body.phoneNumber,
     username: req.body.username,
     registered: req.body.registered,
+    password:req.body.password,
     isAdmin: false,
   };
 
@@ -69,11 +73,12 @@ router.get('/', (req, res, next) => {
 
 
 router.post('/login', (req, res, next) => {  
-  const user = users.find(user => user.username === req.body.username);
-  if (!user) {
+  const getuser = users.filter(user => user.username === req.body.username);
+  const getmain = getuser.find(user => user.password === req.body.password);
+  if (!getmain) {
     throw new Error(`Username provided is invalid ${req.body.username}`);
 }
-res.json({ user })
+res.json({ getmain })
 });
 
 
