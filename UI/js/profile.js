@@ -1,17 +1,18 @@
 $(document).ready(() => {
 
-var records,investigation, rejected, resolved;
+  let records; var investigation; var rejected; var 
+resolved;
 
 
-records = $(".orders");
-investigation = $(".investigation");
-rejected = $(".rejected");
-resolved = $(".resolved");
+  records = $('.orders');
+  investigation = $('.investigation');
+  rejected = $('.rejected');
+  resolved = $('.resolved');
 
 
 
 
-records.click(function(){
+  records.click(() => {
 $(".resolved_interventions").hide();
 $(".interventions").hide();
 $(".rejected_interventions").hide();
@@ -20,28 +21,28 @@ $(".interventions").fadeIn();
 
 
 
-})
+});
 
 
-investigation.click(function(){
+  investigation.click(() => {
     $(".resolved_interventions").hide();
     $(".interventions").hide();
     $(".rejected_interventions").hide();
     $(".under_investigation").fadeIn();
-})
+});
 
-rejected.click(function(){
+  rejected.click(() => {
     $(".resolved_interventions").hide();
     $(".interventions").hide();
     $(".under_investigation").hide();
     $(".rejected_interventions").fadeIn(); 
-})
+});
 
-resolved.click(function(){
+  resolved.click(() => {
     $(".rejected_interventions").hide();
     $(".interventions").hide();
     $(".under_investigation").hide();
     $(".resolved_interventions").fadeIn();
-})
+});
 
 });
