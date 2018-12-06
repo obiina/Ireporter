@@ -1,18 +1,12 @@
-v2
 language: node_js
 node_js:
-v2
+master
   - "stable"
-cache:
-  directories:
-    - "node_modules"
 
-after_success:
-  - npm run coverageafter_success:
-  - npm run coverage
+before script:
+  - "npm i -g mocha"
+  - "npm i -g chai"
+   
+script:
+- npm test
 
- "stable"
-script: gulp travi
-
-master
-master

@@ -14,7 +14,7 @@
         <nav class="dark-nav">
                 <a class="site_title" href="index.html">Ireporter</a>    
                 <a href="admin_log.html">Sign as Admin</a>
-                <a href="signin.html" id="red">Profile</a>                
+                <a href="profile.html" id="red">Profile</a>                
                 <a href="redFlag.html">create record</a>                     
             
                 <div class="bars-container" onclick="toggle(this)">
@@ -38,24 +38,19 @@
 
 
      <div class="redFlagForm">
-         <h1 class="red">Add Red New Flag</h1>
+         <h1 class="red">Add New Record</h1>
          <form class="register" enctype="multipart/form-data">                                    
              <select name="" id="category">
                 <option value="Red Flag">Red Flag</option>
                 <option value="Intervention">Intervention</option>                
          </select>
                 <input type="text" name="title" id="title" placeholder="Title of incident">                          
-                <textarea name="" id="comment" placeholder="Description"></textarea>
-                <div id="map"></div>                
+                <textarea name="" id="comment" placeholder="Description"></textarea>                                
                 <br>
                 <button type="submit" id="signin">Submit</button>
             </form>
         </div>
     </div>
-    
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXgw6ee9ZEUdR2gpdFyZieAF6K6isYl-I&callback=map">
-    </script>
     <script src="js/redFlag.js"></script>     
 <script src="js/ireport.js"></script>
 </body>
