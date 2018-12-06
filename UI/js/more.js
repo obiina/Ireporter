@@ -4,7 +4,7 @@ $(document).ready(() => {
   $(() => {
     $.ajax({
       type: 'GET',
-      url: `/v2/red-flags/report?id=${id}`,
+      url: `api/v1/red-flags/report?id=${id}`,
       contentType: 'application/json',
       success(response) {
         console.log(response.Reportsids);
@@ -14,8 +14,8 @@ $(document).ready(() => {
         info.html('');
 
         const renderReports = ({
-          Images,title, createdOn, CreatedBy, type, location, status, comment}) => 
-        `<div class="more_info">
+          Images, title, createdOn, CreatedBy, type, location, status, comment,
+        }) => `<div class="more_info">
         <p id="more">              
         </p>
         <p id="details">       
