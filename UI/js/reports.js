@@ -1,17 +1,19 @@
 $(document).ready(() => {
   const url = new URL(window.location.href);
   const user = url.searchParams.get('user');
-  $(() => {
-    $.ajax({
-      type: 'GET',
-      url: `/v2/red-flags/user/${user}`,
-      contentType: 'application/json',
-      success(response) {
-        const heading = $('.heading');
-        const details = $('.interventions');                
-        heading.html(`<p id="heading">ALL INTERVENTIONS/RED-FLAGS BY ${user}</p>`);
-        const reportAppend = response.userReports.map(userReport => (
-          `
+  fetch(`api/v1/red-flags/user/${user}`, {
+    method: 'post',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  }).then(json)
+    .then((response) => {
+      const heading = document.querySelector('.heading');
+      const details = document.querySelector('.interventions');
+      heading.html(`<p id="heading">ALL INTERVENTIONS/RED-FLAGS BY ${user}</p>`);
+      const reportAppend = response.userReports.map(userReport => (
+        `
            <div class="index_singleInterventions">
            <div class="img">
                <img src="${userReport.Images}" id="index_img_fit" alt="" srcset="">
@@ -32,9 +34,7 @@ $(document).ready(() => {
                </div>
    </div>
            `
-        ));
-        details.html(reportAppend);
-      },
+      ));
+      details.html(reportAppend);
     });
-  });
 });

@@ -11,7 +11,7 @@ const users = [
     phoneNumber: '080288209',
     username: 'TheSnitch',
     registered: '3 / 25 / 2015',
-    password:'admin',
+    password: 'admin',
     isAdmin: false,
   },
   {
@@ -23,7 +23,7 @@ const users = [
     phoneNumber: '080288209',
     username: 'Thecoolguy',
     registered: '3 / 25 / 2015',
-    password:'password',
+    password: 'password',
     isAdmin: false,
   },
   {
@@ -34,13 +34,13 @@ const users = [
     email: 'Obinna932@gmail.com',
     phoneNumber: '080288209',
     username: 'Thereporter',
-    password:'password',
+    password: 'password',
     registered: '3 / 25 / 2015',
     isAdmin: true,
   },
 ];
 
-router.post('/', (req, res, next) => {
+router.post('/', (req, res) => {
   const user = {
     id: users.length + 1,
     firstname: req.body.firstname,
@@ -50,7 +50,7 @@ router.post('/', (req, res, next) => {
     phoneNumber: req.body.phoneNumber,
     username: req.body.username,
     registered: req.body.registered,
-    password:req.body.password,
+    password: req.body.password,
     isAdmin: false,
   };
 
@@ -61,39 +61,35 @@ router.post('/', (req, res, next) => {
   users.push(user);
 });
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   res.status(200).json({
     message: 'Getting all the users',
     users,
   });
-
 });
 
 
-
-
-router.post('/login', (req, res, next) => {  
+router.post('/login', (req, res) => {
   const getuser = users.filter(user => user.username === req.body.username);
   const getmain = getuser.find(user => user.password === req.body.password);
   if (!getmain) {
     throw new Error(`Username provided is invalid ${req.body.username}`);
-}
-res.json({ getmain })
+  }
+  res.json({ getmain });
 });
 
 
-router.post('/admin', (req, res, next) => {  
+router.post('/admin', (req, res) => {
   const user = users.filter(user => user.username === req.body.username);
   const admincheck = user.find(admin => admin.isAdmin === true);
   if (!admincheck) {
     throw new Error(`You do not have Admin Access ${req.body.username}`);
-}
-res.json({ admincheck })
+  }
+  res.json({ admincheck });
 });
 
 
-
-router.patch('/:usersId', (req, res, next) => {
+router.patch('/:usersId', (req, res) => {
   res.status(200).json({
     message: 'updated user!',
   });

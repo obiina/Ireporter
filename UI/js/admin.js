@@ -5,7 +5,7 @@ document.querySelector('#signin').addEventListener('click', (e) => {
   e.preventDefault();
   const username = document.querySelector('#username').value;
   if (username !== '') {
-    fetch('/v2/users/admin', {
+    fetch('api/v1/users/admin', {
       method: 'post',
       headers: {
         Accept: 'application/json',
