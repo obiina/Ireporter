@@ -17,8 +17,8 @@ document.querySelector('#signin').addEventListener('click', (e) => {
         if (response) {
           console.log(response.admincheck.username);
           localStorage.setItem('username  ', response.admincheck.username);
-          const username = localStorage.getItem('username');
-          window.location.replace(`/admin.html?user=${username}`);
+          const mainusername = localStorage.getItem('username');
+          window.location.replace(`/admin.html?user=${mainusername}`);
         }else {
           alert('Invalid Login');
         }
