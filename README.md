@@ -26,4 +26,4 @@ Features:
 
 Links
 Testing: To be able to test it successfully it is hosted on heroku https://ireporter-2.herokuapp.com
-thank you for reading
+thank you for reading.
