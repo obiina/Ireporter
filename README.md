@@ -27,7 +27,7 @@ Features:
 
 Links
 Testing: To be able to test it successfully it is hosted on heroku https://ireporter-2.herokuapp.com
-
+thank you
 
 <a href='https://coveralls.io/github/obiina/Ireporter?branch=master'><img src='https://coveralls.io/repos/github/obiina/Ireporter/badge.svg?branch=master' alt='Coverage Status' /></a>
 [![Build Status](https://travis-ci.com/obiina/Ireporter.svg?branch=development)](https://travis-ci.com/obiina/Ireporter)
