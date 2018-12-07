@@ -13,9 +13,9 @@ app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/UI/index.html`);
 });
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.json()); 
 app.use('/api/v1/users', usersRoutes);
-app.use('/api/v1/red-flags/', redFlagsRoutes);
+app.use('/api/v1/red-flags', redFlagsRoutes);
 app.use((req, res, next) => {
   const error = new Error('Not Found');
   error.status = 404;

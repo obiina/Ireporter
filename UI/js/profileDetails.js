@@ -5,17 +5,16 @@ document.querySelector('#red').href = `redFlag.html?user=${user}`;
 $(document).ready(() => {
   const url = new URL(window.location.href);
   const user = url.searchParams.get('user');
-  const status = 'Draft';
+  const status = 'Draft'        
   $(() => {
     $.ajax({
       type: 'GET',
       url: `api/v1/red-flags/report/${user}/${status}/`,
       contentType: 'application/json',
-      success(response) {
-        const details = $('.interventions');
-        const heading = $('#headingrecord');
-        heading.html('');
-        heading.html('<p id="headingrecord">ALL INTERVENTIONS/RED-FLAGS</p>');
+      success(response) {          
+        const details = $('.interventions');                
+        const heading = $('#headingrecord');          
+        heading.html(`<p id="headingrecord">ALL INTERVENTIONS/RED-FLAGS</p>`);
         const reportAppend = response.mainStatus.map(userReport => (
           `
              <div class="singleInterventions">             
@@ -29,29 +28,29 @@ $(document).ready(() => {
     });
   });
 
-  $('body').on('click', '#delete_son', function () {
-    const id = $(this).attr('data-delete');
+  $('body').on('click', '#delete_son', function(){
+    const id = $(this).attr('data-delete')
     $.ajax({
       type: 'DELETE',
-      url: `api/v1/red-flags/report?id=${id}`,
+      url: `/v2/red-flags/report?id=${id}`,
       contentType: 'application/json',
-      success(response) {
+      success(response) {   
         alert('Succesfully Deleted Red Flag');
         location.reload();
-      },
-    });
-  });
+      }
+    })       
+  })
 
-  document.querySelector('.investigation').addEventListener('click', () => {
-    const status = 'Under Investigation';
+  document.querySelector('.investigation').addEventListener('click',() =>{
+    const status = 'Under Investigation'        
     $.ajax({
       type: 'GET',
       url: `api/v1/red-flags/report/${user}/${status}/`,
       contentType: 'application/json',
-      success(response) {
-        const details = $('.under_investigation');
-        const heading = $('#headingrecord');
-        heading.html('<p id="headingrecord">ALL INTERVENTIONS/RED-FLAGS UNDER INVESTIGATION</p>');
+      success(response) {          
+        const details = $('.under_investigation');                
+        const heading = $('#headingrecord');          
+        heading.html(`<p id="headingrecord">ALL INTERVENTIONS/RED-FLAGS UNDER INVESTIGATION</p>`);
         const reportstatusAppend = response.mainStatus.map(reportStatus => (
           `
               <div class="singleInterventions">             
@@ -65,16 +64,16 @@ $(document).ready(() => {
     });
   });
 
-  document.querySelector('.rejected').addEventListener('click', () => {
-    const status = 'Rejected';
+  document.querySelector('.rejected').addEventListener('click',() =>{
+    const status = 'Rejected'        
     $.ajax({
       type: 'GET',
       url: `api/v1/red-flags/report/${user}/${status}/`,
       contentType: 'application/json',
-      success(response) {
-        const details = $('.rejected_interventions');
-        const heading = $('#headingrecord');
-        heading.html('<p id="headingrecord">ALL REJECTED INTERVENTIONS/RED-FLAGS</p>');
+      success(response) {          
+        const details = $('.rejected_interventions');                
+        const heading = $('#headingrecord');          
+        heading.html(`<p id="headingrecord">ALL REJECTED INTERVENTIONS/RED-FLAGS</p>`);
         `<p class="header">ALL INTERVENTIONS/RED-FLAGS BY ${user}</p>`;
         const reportstatusAppend = response.mainStatus.map(reportStatus => (
           `
@@ -89,16 +88,16 @@ $(document).ready(() => {
     });
   });
 
-  document.querySelector('.resolved').addEventListener('click', () => {
-    const status = 'Resolved';
+  document.querySelector('.resolved').addEventListener('click',() =>{
+    const status = 'Resolved'        
     $.ajax({
       type: 'GET',
       url: `api/v1/red-flags/report/${user}/${status}/`,
       contentType: 'application/json',
-      success(response) {
-        const details = $('.resolved_interventions');
-        const heading = $('#headingrecord');
-        heading.html('<p id="headingrecord">ALL RESOLVED INTERVENTIONS/RED-FLAGS</p>');
+      success(response) {          
+        const details = $('.resolved_interventions');                            
+        const heading = $('#headingrecord');          
+        heading.html(`<p id="headingrecord">ALL RESOLVED INTERVENTIONS/RED-FLAGS</p>`);
         const reportstatusAppend = response.mainStatus.map(reportStatus => (
           `
               <div class="singleInterventions">             
@@ -112,3 +111,5 @@ $(document).ready(() => {
     });
   });
 });
+  
+
