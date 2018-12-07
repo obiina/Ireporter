@@ -5,7 +5,8 @@ function json(res) {
 
 document.querySelector('#sign').addEventListener('click', (e) => {
   e.preventDefault();
-  const username = document.querySelector('#username').value;
+  const fakeusername = document.querySelector('#username').value;
+  const username = fakeusername.toLowerCase();
   const password = document.querySelector('#password').value;
   if (username !== '') {
     fetch('api/v1/users/login', {

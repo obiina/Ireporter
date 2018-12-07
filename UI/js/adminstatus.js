@@ -47,9 +47,8 @@ $(document).ready(() => {
   $('body').on('click', '#change', (e) => {
     const id = $(event.target).val();
     const f = document.getElementById('admin_select');
-    const status = f.options[f.selectedIndex].value;
-    alert(status);
-    fetch(`/v2/red-flags/report?id=${id}`, {
+    const status = f.options[f.selectedIndex].value;    
+    fetch(`api/v1/red-flags/report?id=${id}`, {
       method: 'PUT',
       headers: {
         Accept: 'application/json',

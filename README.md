@@ -17,9 +17,6 @@ $ npm start
 next go to your browser and type localhost:3000
 This should get the app running on your localhost.
 
-Deploying / Publishing
-In case there's some step you have to take that publishes this project to a server, this is the right time to state it.
-
 Features:
 -User can create an account and log in
 -User can report what either a red flag (a crime that is going on).

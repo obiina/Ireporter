@@ -3,12 +3,17 @@ function json(res) {
 }
 document.querySelector('#sign').addEventListener('click', (e) => {
   e.preventDefault();
-  const firstname = document.querySelector('#firstname').value;
-  const lastname = document.querySelector('#lastname').value;
-  const othernames = document.querySelector('#othernames').value;
-  const email = document.querySelector('#email').value;
+  const fakefirstname = document.querySelector('#firstname').value;
+  const firstname = fakefirstname.toLowerCase();
+  const fakelastname = document.querySelector('#lastname').value;
+  const lastname = fakelastname.toLowerCase();
+  const fakeothernames = document.querySelector('#othernames').value;
+  const othernames = fakeothernames.toLowerCase();
+  const fakeemail = document.querySelector('#email').value;
+  const email = fakeemail.toLowerCase();
   const phoneNumber = document.querySelector('#number').value;
-  const username = document.querySelector('#username').value;
+  const fakeusername = document.querySelector('#username').value;
+  const username = fakeusername.toLowerCase();
   const password = document.querySelector('#password').value;
   // validation for required fields
 

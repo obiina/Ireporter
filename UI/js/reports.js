@@ -1,22 +1,25 @@
 $(document).ready(() => {
+  function json(res) {
+    return res.json();
+  }
   const url = new URL(window.location.href);
   const user = url.searchParams.get('user');
+
   fetch(`api/v1/red-flags/user/${user}`, {
-    method: 'post',
+    method: 'get',
     headers: {
-      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
   }).then(json)
     .then((response) => {
-      const heading = document.querySelector('.heading');
-      const details = document.querySelector('.interventions');
-      heading.html(`<p id="heading">ALL INTERVENTIONS/RED-FLAGS BY ${user}</p>`);
+      console.log(response);
+      const heading = document.getElementsByClassName('.heading');
+      const details = document.getElementsByClassName('.interventions');
+      heading.innerHTML = `<p id="heading">ALL INTERVENTIONS/RED-FLAGS BY ${user}</p>`;
       const reportAppend = response.userReports.map(userReport => (
         `
            <div class="index_singleInterventions">
-           <div class="img">
-               <img src="${userReport.Images}" id="index_img_fit" alt="" srcset="">
+           <div class="img">                 
            </div>
            <div class="interventionDetails">
                <p>Created by: ${userReport.CreatedBy}</p>
@@ -35,6 +38,7 @@ $(document).ready(() => {
    </div>
            `
       ));
-      details.html(reportAppend);
+      details.innerHTML = reportAppend;
+      // details.innerHTML = '';
     });
 });
