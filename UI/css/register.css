@@ -16,7 +16,7 @@ background: url(../pics/report.jpg);
 }
 
 .signin {
-    width: 400px;
+    width: 60%;
     display: inline-block;
     background: #fff;    
     margin: 0 0 0 -4px;
@@ -131,4 +131,9 @@ p#signIn {
     height: 770px;
 }
 
+}
+@media only screen and (max-width: 500px){
+#sign{
+    width: 106%;
+}
 }

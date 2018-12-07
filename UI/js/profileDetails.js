@@ -33,7 +33,7 @@ $(document).ready(() => {
     const id = $(this).attr('data-delete');
     $.ajax({
       type: 'DELETE',
-      url: `/v2/red-flags/report?id=${id}`,
+      url: `api/v1/red-flags/report?id=${id}`,
       contentType: 'application/json',
       success(response) {
         alert('Succesfully Deleted Red Flag');
